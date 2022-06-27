@@ -1,0 +1,35 @@
+* scala-cli.el
+
+Runs an inferior [[https://scala-cli.virtuslab.org/][scala-cli]] process in [[https://www.gnu.org/software/emacs/][Emacs]].
+
+** Installing
+
+Not yet deployed to MELPA.  Clone it and get it on your load path.
+Maybe [[https://github.com/radian-software/straight.el#but-what-about-my-fork-of-obscure-el-package][straight.el]] can help.  Snippets welcome for your favorite
+package tool.  If this proves to be more than a passing fancy, we'll
+get it in MELPA.
+
+** Status
+
+Extremely experimental.  Inspired by [[https://masteringemacs.org/article/comint-writing-command-interpreter][Mickey Petersen's Comint blog post]].
+
+** Running
+
+#+begin_src emacs-lisp
+  (require 'scala-cli)
+  (run-scala-cli)
+#+end_src
+
+Enjoy your scala-cli REPL in comint mode.
+
+** Motivation
+
+It occupies a similar place to the former [[https://github.com/zwild/ammonite-term-repl][ammonite-term-repl]], and we
+envision it supporting an [[https://orgmode.org/worg/org-contrib/babel/][Org Babel]] backend in the spirit of
+[[https://github.com/zwild/ob-ammonite][ob-ammonite]].
+
+[[https://github.com/hvesalai/emacs-sbt-mode][sbt-mode]] is great, but requires sbt.  It requires "submodes" to switch
+between the sbt shell and the Scala REPL.  There is a lot that goes
+into integrating the mode with a build tool, when sometimes all we
+need is a simple REPL.  This mode is for tasks that don't require
+a build tool.
